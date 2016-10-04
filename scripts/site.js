@@ -24,3 +24,16 @@
   window.addEventListener('resize', loadAllImages);
 
 }());
+
+/* modal */
+$(".list-item").click(function() {
+  $('.ui.modal').modal('show');
+  $('.link-project').attr("href", $(this).data("target"));
+  $('.header-project').text($(this).data("title")); 
+  $('.image').attr("src", $(this).children("img").attr("src"));
+});
+
+$(".close-modal").click(function(){
+  $('.ui.modal').modal('hide');
+});
+
