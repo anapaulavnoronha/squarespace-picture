@@ -1,0 +1,10 @@
+<div>
+      {.repeated section items}
+        <div>
+          {.image?}
+            <img class="image-project" {@|image-meta} data-load="false"/>
+            <noscript><img class="image" src="{assetUrl}?format=1500w"></noscript>
+          {.end}
+        </div>
+      {.end}
+</div>

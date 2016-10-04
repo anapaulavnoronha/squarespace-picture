@@ -1,0 +1,38 @@
+<div>
+	<ul class="list-images">
+		{.section collection}
+		{.repeated section collections}
+	  <li class="list-item" data-target="{fullUrl}" data-title="{title}">
+      	{.section mainImage}
+				<img src="{assetUrl}">
+				{.end}
+	  </li>
+	  {.end}
+	  {.end}
+	</ul>
+</div>
+
+<div class="ui modal">
+  <div class="header header-project"></div>
+  <div class="image content">
+    <img class="image image-modal">
+    <div class="description">
+		<a class="ui positive button link-project">Details</a>
+		<div class="ui cancel button close-modal">Close</div>
+  </div>
+	</div>
+</div>
+
+<script>
+	$(".list-item").click(function() {
+	  $('.ui.modal').modal('show');
+	  $('.link-project').attr("href", $(this).data("target"));
+	  $('.header-project').text($(this).data("title"));	
+	  $('.image').attr("src", $(this).children("img").attr("src"));
+	});
+
+	$(".close-modal").click(function(){
+		$('.ui.modal').modal('hide');
+	});
+
+</script>
